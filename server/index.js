@@ -97,6 +97,46 @@ app.get("/northernhemisphere2000",async function (req,res){
     
 })
 
+app.get("/maunaloaannual",async function (req,res){
+    try{
+        const connection = await mysql.createConnection(config.db)
+        const [result] = await connection.execute('select * from maunaloaco2annual')
+
+        if (!result) result=[]
+        res.status(200).json(result)
+    } catch(err){
+        res.status(500).json({error:err.message})
+    }
+    
+})
+
+app.get("/maunaloamonthly",async function (req,res){
+    try{
+        const connection = await mysql.createConnection(config.db)
+        const [result] = await connection.execute('select * from maunaloaco2monthly')
+
+        if (!result) result=[]
+        res.status(200).json(result)
+    } catch(err){
+        res.status(500).json({error:err.message})
+    }
+    
+})
+
+app.get("/antarcticadata",async function (req,res){
+    try{
+        const connection = await mysql.createConnection(config.db)
+        const [result] = await connection.execute('select * from antarcticdata')
+
+        if (!result) result=[]
+        res.status(200).json(result)
+    } catch(err){
+        res.status(500).json({error:err.message})
+    }
+    
+})
+
+
 
 
 

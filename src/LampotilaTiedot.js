@@ -77,10 +77,40 @@ export default function LampotilaTiedot() {
               alert(error.response.data.error)
           })
       }, [])
+      //MAUNALOACO2ANNUAL
+      const [tietomla, setTietomla] = useState ( [])
+      useEffect(() => {
+          axios.get(URL + 'maunaloaannual')
+          .then((response) => {
+              setTietomla(response.data)
+          }).catch (error => {
+              alert(error.response.data.error)
+          })
+      }, [])
+      //MAUNALOACO2MONTHLY
+      const [tietomlm, setTietomlm] = useState ( [])
+      useEffect(() => {
+          axios.get(URL + 'maunaloamonthly')
+          .then((response) => {
+              setTietomlm(response.data)
+          }).catch (error => {
+              alert(error.response.data.error)
+          })
+      }, [])
+      //ANTARCTICADATA
+      const [tietoant, setTietoant] = useState ( [])
+      useEffect(() => {
+          axios.get(URL + 'antarcticadata')
+          .then((response) => {
+              setTietoant(response.data)
+          }).catch (error => {
+              alert(error.response.data.error)
+          })
+      }, [])
 
 
 
-
+// V1 & V2 VISUALISOINNIT
   const data1 = {
     datasets: [
       {
@@ -89,8 +119,8 @@ export default function LampotilaTiedot() {
         borderWidth: 2,
         borderColor: "rgb(0, 0, 0)",
         parsing: {
-          xAxisKey: "Time",
-          yAxisKey: "Temp",
+          xAxisKey: "COL 1",
+          yAxisKey: "COL 2",
         },
         pointRadius: 1,
       },
@@ -164,8 +194,48 @@ export default function LampotilaTiedot() {
 
     ],
   };
+  //V3 & V4 VISUALISOINNIT
+  const data2 = {
+    datasets: [
+      {
+        label: "Mauna Loa CO2 PPM Annual",
+        data: tietomla,
+        borderWidth: 2,
+        borderColor: "rgb(256, 0, 256)",
+        parsing: {
+          xAxisKey: "COL 1",
+          yAxisKey: "COL 2",
+        },
+        pointRadius: 1,
+      },
+      {
+        label: "Mauna Loa CO2 PPM Monthly",
+        data: tietomlm,
+        borderWidth: 2,
+        borderColor: "rgb(0, 0, 256)",
+        parsing: {
+          xAxisKey: "COL 1",
+          yAxisKey: "COL 2",
+        },
+        pointRadius: 1,
+      },
+      {
+        label: "Antarctica CO2 PPM ~ 1000 year data",
+        data: tietoant,
+        hidden: true,
+        borderWidth: 2,
+        borderColor: "rgb(50, 50, 256)",
+        parsing: {
+          xAxisKey: "COL 1",
+          yAxisKey: "COL 2",
+        },
+        pointRadius: 1,
+      },
+      
 
-  const options = {
+    ],
+  };
+  const options1 = {
     responsive: true,
     plugins: {
       legend: {
@@ -188,17 +258,42 @@ export default function LampotilaTiedot() {
       },
     },
   };
+  const options2 = {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: "top",
+      },
+      title: {
+        display: true,
+        text: "CO2 measurements from Mauna Loa and Antarctica",
+      },
+    },
+    scales: {
+      x: {
+        type: "time",
+        time: {
+          unit: "month",
+        },
+      },
+      yAxis: {
+        type: "linear",
+      },
+    },
+  };
 
     return (
 
              <div style={{ width: "1200px" }}>
-            <h3>Testidata</h3>
+            <h3>Lämpötilatiedot</h3>
+            <div>
+            <Line options={options1} data={data1}/>
+            </div>
+            <div class="tila">
+            <h3>Hiilidioksidipitoisuudet</h3>
+            <Line options={options2} data={data2}/>
+            </div>
             
-            <Line options={options} data={data1}/>
-            
-         
-        
-        
         </div>
     );
 }
