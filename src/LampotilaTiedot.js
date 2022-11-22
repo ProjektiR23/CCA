@@ -107,6 +107,38 @@ export default function LampotilaTiedot() {
               alert(error.response.data.error)
           })
       }, [])
+      //VOSTOKICECORECO2
+      const [tietovic, setTietovic] = useState ( [])
+      useEffect(() => {
+          axios.get(URL + 'vostokicecoreco2')
+          .then((response) => {
+              setTietovic(response.data)
+          }).catch (error => {
+              alert(error.response.data.error)
+          })
+      }, [])
+      //ICECORE800kYEARCOMPOSITESTUDY
+      const [tietoicy, setTietoicy] = useState ( [])
+      useEffect(() => {
+          axios.get(URL + 'icecore800kcompositestudy')
+          .then((response) => {
+              setTietoicy(response.data)
+          }).catch (error => {
+              alert(error.response.data.error)
+          })
+      }, [])
+      //EVOLUTIONOFGLOBALTEMPERATURE
+      /*const [tietoeog, setTietoeog] = useState ( [])
+      useEffect(() => {
+          axios.get(URL + 'evolutionofglobaltemperature')
+          .then((response) => {
+              setTietoeog(response.data)
+          }).catch (error => {
+              alert(error.response.data.error)
+          })
+      }, [])
+      */
+
 
 
 
@@ -235,6 +267,63 @@ export default function LampotilaTiedot() {
 
     ],
   };
+  //V5
+  const data3 = {
+    datasets: [
+      {
+        label: "Vostok Ice Core CO2",
+        data: tietovic,
+        borderWidth: 3,
+        borderColor: "rgb(256, 0, 256)",
+        parsing: {
+          xAxisKey: "COL 1",
+          yAxisKey: "COL 2",
+        },
+        pointRadius: 1,
+      },
+      
+      
+
+    ],
+  };
+  //V6
+  const data4 = {
+    datasets: [
+      {
+        label: "Ice Core 800k Year Composite Study",
+        data: tietoicy,
+        borderWidth: 2,
+        borderColor: "rgb(256, 0, 256)",
+        parsing: {
+          xAxisKey: "COL 1",
+          yAxisKey: "COL 2",
+        },
+        pointRadius: 1,
+      },
+      
+      
+
+    ],
+  };
+  //V7
+  /*const data5 = {
+    datasets: [
+      {
+        label: "Evolution of global temperature over the past two million years",
+        data: tietoeog,
+        borderWidth: 2,
+        borderColor: "rgb(256, 0, 256)",
+        parsing: {
+          xAxisKey: "COL 1",
+          yAxisKey: "COL 2",
+        },
+        pointRadius: 1,
+      },
+      
+      
+
+    ],
+  };*/
   const options1 = {
     responsive: true,
     plugins: {
@@ -281,6 +370,75 @@ export default function LampotilaTiedot() {
       },
     },
   };
+  const options3 = {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: "top",
+      },
+      title: {
+        display: true,
+        text: "Vostok Ice Core CO2 measurements, 417160 - 2342 years (bp)",
+      },
+    },
+    scales: {
+      x: {
+        type: "time",
+        time: {
+          unit: "year",
+        },
+      },
+      yAxis: {
+        type: "linear",
+      },
+    },
+  };
+  const options4 = {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: "top",
+      },
+      title: {
+        display: true,
+        text: "Ice core 800k year composite study CO2 measurements (bp)",
+      },
+    },
+    scales: {
+      x: {
+        type: "time",
+        time: {
+          unit: "month",
+        },
+      },
+      yAxis: {
+        type: "linear",
+      },
+    },
+  };
+  /*const options5 = {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: "top",
+      },
+      title: {
+        display: true,
+        text: "Evolution of global temperature over the past two million years",
+      },
+    },
+    scales: {
+      x: {
+        type: "time",
+        time: {
+          unit: "month",
+        },
+      },
+      yAxis: {
+        type: "linear",
+      },
+    },
+  };*/
 
     return (
 
@@ -293,6 +451,13 @@ export default function LampotilaTiedot() {
             <h3>Hiilidioksidipitoisuudet</h3>
             <Line options={options2} data={data2}/>
             </div>
+            <div class="tila">
+            <Line options={options3} data={data3}/>
+            </div>
+            <div class="tila">
+            <Line options={options4} data={data4}/>
+            </div>
+            
             
         </div>
     );
