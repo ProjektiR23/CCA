@@ -128,16 +128,26 @@ export default function LampotilaTiedot() {
           })
       }, [])
       //EVOLUTIONOFGLOBALTEMPERATURE
-      /*const [tietoeog, setTietoeog] = useState ( [])
+      const [tietoeog, setTietoeog] = useState ( [])
       useEffect(() => {
-          axios.get(URL + 'evolutionofglobaltemperature')
+          axios.get(URL + 'evolutionofglobal')
           .then((response) => {
               setTietoeog(response.data)
           }).catch (error => {
               alert(error.response.data.error)
           })
       }, [])
-      */
+      //EVOLUTIONOFGLOBALTEMPERATURECO2
+      const [tietoeog2, setTietoeog2] = useState ( [])
+      useEffect(() => {
+          axios.get(URL + 'evolutionofglobalco2')
+          .then((response) => {
+              setTietoeog2(response.data)
+          }).catch (error => {
+              alert(error.response.data.error)
+          })
+      }, [])
+      
 
 
 
@@ -306,24 +316,39 @@ export default function LampotilaTiedot() {
     ],
   };
   //V7
-  /*const data5 = {
+  const data5 = {
     datasets: [
       {
-        label: "Evolution of global temperature over the past two million years",
+        label: "Temp",
         data: tietoeog,
         borderWidth: 2,
         borderColor: "rgb(256, 0, 256)",
         parsing: {
           xAxisKey: "COL 1",
           yAxisKey: "COL 2",
+          yAxisID: 'temp',
+        },
+        pointRadius: 1,
+      },
+      {
+        label: "co2",
+        data: tietoeog2,
+        borderWidth: 2,
+        borderColor: "rgb(255, 0, 0)",
+        parsing: {
+          xAxisKey: "COL 1",
+          yAxisKey: "COL 2",
+          yAxisID: 'co2',
         },
         pointRadius: 1,
       },
       
+     
+      
       
 
     ],
-  };*/
+  };
   const options1 = {
     responsive: true,
     plugins: {
@@ -378,15 +403,13 @@ export default function LampotilaTiedot() {
       },
       title: {
         display: true,
-        text: "Vostok Ice Core CO2 measurements, 417160 - 2342 years (bp)",
+        text: "Vostok Ice Core CO2 measurements, 417160 - 2342 years ",
       },
     },
     scales: {
       x: {
-        type: "time",
-        time: {
-          unit: "year",
-        },
+        type: "linear",
+        
       },
       yAxis: {
         type: "linear",
@@ -401,22 +424,20 @@ export default function LampotilaTiedot() {
       },
       title: {
         display: true,
-        text: "Ice core 800k year composite study CO2 measurements (bp)",
+        text: "Ice core 800k year composite study CO2 measurements ",
       },
     },
     scales: {
       x: {
-        type: "time",
-        time: {
-          unit: "month",
-        },
+        type: "linear",
+        
       },
       yAxis: {
         type: "linear",
       },
     },
   };
-  /*const options5 = {
+  const options5 = {
     responsive: true,
     plugins: {
       legend: {
@@ -429,16 +450,23 @@ export default function LampotilaTiedot() {
     },
     scales: {
       x: {
-        type: "time",
-        time: {
-          unit: "month",
-        },
-      },
-      yAxis: {
         type: "linear",
+        
+
       },
+      temp: {
+        type: "linear",
+        display:true,
+        position:'right',
+
+      },
+      co2:{
+        type: "linear",
+        display:true,
+        position:'left',
+      }
     },
-  };*/
+  };
 
     return (
 
@@ -456,6 +484,9 @@ export default function LampotilaTiedot() {
             </div>
             <div class="tila">
             <Line options={options4} data={data4}/>
+            </div>
+            <div class="tila">
+            <Line options={options5} data={data5}/>
             </div>
             
             

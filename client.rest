@@ -1,1 +1,1 @@
-GET http://localhost:3001/vostokicecoreco2 HTTP/1.1
+GET http://localhost:3001/evolutionofglobal HTTP/1.1
