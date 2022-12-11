@@ -1,1 +1,1 @@
-GET http://localhost:3001/emissionbycountry HTTP/1.1
+GET http://localhost:3001/antarcticadata HTTP/1.1

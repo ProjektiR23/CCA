@@ -74,3 +74,14 @@ footer {
 .tila {
   padding-bottom: 60px;
 }
+
+
+.pohja {
+  padding-bottom: 200px;
+}
+.i {
+  font-style: italic;
+}
+.b {
+  font-weight: bolder;
+}

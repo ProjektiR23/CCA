@@ -160,6 +160,69 @@ app.get("/emissionbycountry2",async function (req,res){
     }
     
 })
+app.get("/evolutionofglobal",async function (req,res){
+    try{
+        const connection = await mysql.createConnection(config.db)
+        const [result] = await connection.execute('select * from evolution_of_global')
+
+        if (!result) result=[]
+        res.status(200).json(result)
+    } catch(err){
+        res.status(500).json({error:err.message})
+    }
+
+})
+app.get("/vostokicecoreco2",async function (req,res){
+    try{
+        const connection = await mysql.createConnection(config.db)
+        const [result] = await connection.execute('select * from vostokicecoreco2')
+
+        if (!result) result=[]
+        res.status(200).json(result)
+    } catch(err){
+        res.status(500).json({error:err.message})
+    }
+
+})
+
+app.get("/icecore800kcompositestudy",async function (req,res){
+    try{
+        const connection = await mysql.createConnection(config.db)
+        const [result] = await connection.execute('select * from icecore_800k_compositestudy')
+
+        if (!result) result=[]
+        res.status(200).json(result)
+    } catch(err){
+        res.status(500).json({error:err.message})
+    }
+
+})
+
+app.get("/evolutionofglobal",async function (req,res){
+    try{
+        const connection = await mysql.createConnection(config.db)
+        const [result] = await connection.execute('select * from evolution_of_global')
+
+        if (!result) result=[]
+        res.status(200).json(result)
+    } catch(err){
+        res.status(500).json({error:err.message})
+    }
+
+})
+
+app.get("/evolutionofglobalco2",async function (req,res){
+    try{
+        const connection = await mysql.createConnection(config.db)
+        const [result] = await connection.execute('select * from evolution_of_global_co2')
+
+        if (!result) result=[]
+        res.status(200).json(result)
+    } catch(err){
+        res.status(500).json({error:err.message})
+    }
+
+})
 
 
 

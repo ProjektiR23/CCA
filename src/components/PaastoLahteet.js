@@ -2858,24 +2858,26 @@ const URL = 'http://localhost:3001/'
       const optionsebc = {
         responsive: true,
         plugins: {
-          Chart: {
-            padding: {
-              top: 30,
-            }
-          },
           legend: {
-          
-            position: "bottom",
+          labels:{
+            font:{
+              size:8,
+            },
+          },
+            position: "top",
         
-            padding:20,
+            padding:10,
             title: {
               display: true,
+              padding:{
+                top:-10,
+              },
             },
          
           },
           title: {
             display: true,
-            text: "Emissions by country",
+            text: "Maiden CO2 päästöt (Milj. tonnia/vuosi)",
           },
         },
         scales: {
@@ -2886,6 +2888,11 @@ const URL = 'http://localhost:3001/'
             },
           },
           yAxis: {
+            title:{
+              padding:{
+                bottom:4,
+              },
+            },
             type: "linear",
           },
         },
@@ -2894,13 +2901,26 @@ const URL = 'http://localhost:3001/'
 
 
     return (
-      <div style={{ width: "1200px" }}>
-            <h3>Maiden Päästöt</h3>
-            <div>
+      <div style={{ width: "1300px" }}>
+      <div>
+            <h3>(4) Maiden CO2 päästöjä vuosilta 1959-2021</h3>
+            
             <Line options={optionsebc} data={dataebc}/>
-        </div>
-        </div>
-        
-        
+  </div>
+  Tässä kuvaajassa piirretään maiden hiilidioksidipäästöt vuosilta 1959-2021. Joiltakin mailta puuttuu arvot ensimmäisiltä vuosilta, mutta suurimmalla osalla data on kohdallaan!
+  <div/>
+  <b>(4.1)</b>
+  <a href="https://data.icos-cp.eu/licence_accept?ids=%5B%22lApekzcmd4DRC34oGXQqOxbJ%22%5D"> Linkki maiden hiilidioksidipäästötiedoista vuosilta 1959-2021</a>
+  <div/>
+  <b>(4.1)</b>
+  <a href="https://www.icos-cp.eu/science-and-impact/global-carbon-budget/2021"> Linkki maiden hiilidioksidipäästötietojen tutkimuksesta</a>
+  
+     
+              <div class="pohja">
+              
+              <p class="i"><b>(4.1)</b> Global Carbon Project. (2021). Supplemental data of Global Carbon Budget 2021 (Version 1.0) [Data set]. Global Carbon Project. https://doi.org/10.18160/gcp-2021 </p>
+           
+           </div>    
+           </div>
     )
 }
