@@ -212,7 +212,7 @@ export default function LampotilaTiedot() {
         label: "Mauna Loa CO2 PPM Monthly",
         data: tietomlm,
         borderWidth: 2,
-        borderColor: "rgb(0, 0, 256)",
+        borderColor: "rgb(255, 255, 0)",
         parsing: {
           xAxisKey: "COL 1",
           yAxisKey: "COL 2",
@@ -230,6 +230,54 @@ export default function LampotilaTiedot() {
           yAxisKey: "COL 2",
         },
         pointRadius: 1,
+      },
+      {
+        label: "Ice core DE08 measurements",
+        data: tietoant,
+        hidden: true,
+        borderWidth: 2,
+        borderColor: "rgb(255, 0, 0)",
+        parsing: {
+          xAxisKey: "COL 3",
+          yAxisKey: "COL 4",
+        },
+        pointRadius: 1,
+      },
+      {
+        label: "Ice core DE08-2 measurements",
+        data: tietoant,
+        hidden: true,
+        borderWidth: 2,
+        borderColor: "rgb(0, 255, 0)",
+        parsing: {
+          xAxisKey: "COL 5",
+          yAxisKey: "COL 6",
+        },
+        pointRadius: 1,
+      },
+      {
+        label: "Events of the human history",
+        data: tietoant,
+        hidden: true,
+        drawLine: false,
+        pointBorderColor: "rgb(0, 255, 0)",
+       parsing: {
+          xAxisKey: "COL 7",
+          yAxisKey: "COL 8",
+      },
+
+       //  pointRadius: 5,
+
+     /*  annotation:{
+        annotations:{
+          History:{
+            data: tietoant,
+            xValue: "COL 7",
+            yValue: "COL 8",
+            backgroundColor: 'rgba(255, 99, 132, 0.25)'
+          }
+        }
+       }*/
       },
       
 

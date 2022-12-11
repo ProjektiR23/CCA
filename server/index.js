@@ -126,7 +126,7 @@ app.get("/maunaloamonthly",async function (req,res){
 app.get("/antarcticadata",async function (req,res){
     try{
         const connection = await mysql.createConnection(config.db)
-        const [result] = await connection.execute('select * from antarcticdata')
+        const [result] = await connection.execute('select * from antarcticdatanew')
 
         if (!result) result=[]
         res.status(200).json(result)
@@ -136,7 +136,30 @@ app.get("/antarcticadata",async function (req,res){
     
 })
 
+app.get("/emissionbycountry1",async function (req,res){
+    try{
+        const connection = await mysql.createConnection(config.db)
+        const [result] = await connection.execute('select * from emissionbycountry1')
 
+        if (!result) result=[]
+        res.status(200).json(result)
+    } catch(err){
+        res.status(500).json({error:err.message})
+    }
+    
+})
+app.get("/emissionbycountry2",async function (req,res){
+    try{
+        const connection = await mysql.createConnection(config.db)
+        const [result] = await connection.execute('select * from emissionbycountry2')
+
+        if (!result) result=[]
+        res.status(200).json(result)
+    } catch(err){
+        res.status(500).json({error:err.message})
+    }
+    
+})
 
 
 
