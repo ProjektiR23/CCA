@@ -2,6 +2,7 @@ body {
     text-align: center;
     color: #15172b;
     background-color: #15172b;
+    
 }
 
   .form {
@@ -12,6 +13,7 @@ body {
     padding: 20px;
     width: 500px;
     display: inline-block;
+    
   }
   
   .title {
@@ -55,6 +57,7 @@ body {
     outline: 0;
     padding: 4px 20px 0;
     width: 100%;
+    resize: vertical;
   }
   
   .cut {

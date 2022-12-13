@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  
 }
 header img {
   height: 80px;
@@ -8,7 +9,11 @@ body {
   height: 125vh;
   background-image: url(./kkkk.jpg);
   background-size: cover;
+  
+  
   font-family: sans-serif;
+  
+ 
 }
 
 .App-logo {
@@ -73,14 +78,41 @@ footer {
 }
 .tila {
   padding-bottom: 60px;
+  
 }
 
 .pohja {
-  padding-bottom: 200px;
+  padding-bottom: 20px;
 }
 .i {
   font-style: italic;
 }
 .b {
+  width:100%;
+  max-width:1000px;
   font-weight: bolder;
 }
+
+
+.class{
+  width:100%;
+  max-width:1000px;
+}
+
+
+
+.tila {
+  
+  max-width: 1400px;
+  min-width: none;
+  max-height: auto;
+  min-height: 200px;
+  display: inline-block;
+    position: relative;
+    width: 100%;
+    background-size: contain;
+}
+
+
+
+  

@@ -1,3 +1,35 @@
+# CCA 
+
+# (Climate change app) 
+
+# CCA-ilmastonmuutossovellus
+
+Tässä projektissa tarkoituksena oli opiskelijaryhmällä tuottaa sovellus hyödyntämällä web-ohjelmoinnin osaamista.
+
+Sovelluksessa piirretään kuvaajia ilmastonmuutoksen vaikutuksista ilmakehän lämpötilaan ja hiilidioksidipitoisuuksiin. 
+Sovellus on verkkosivu, jossa kuvaajat näkyvät eri sivuilla. Aiemmin mainitut sovelluksen elementit vaativat ryhmältä ohjelmointikokemusta ja -tietämystä backend:stä ja frontend:stä 
+
+Tämän projektin tekivät Markus Risuaho, Onni Räisänen, Roni Tuohimaa ja Tomi Lämsä. Meidän ryhmällä ei oltu määritelty rooleja vaan kaikki työskentelivät full stack kehittäjinä. 
+Sovellus toteutettiin käyttäen Reactia ja Node.js. MySQL tietokannassa serverinä käytettiin XAMPP:ssa olevaa Apachea. 
+
+Sovellus aiottiin julkaista Google Cloudissa (Google Cloud Platform), käyttäen opiskelijoille tarkoitetulla kreditillä. 
+Tietokannalla ja sovelluksella olisi ollut niille erilliset varatut palvelimet, mutta sovelluksen tuonti Google Cloudiin jäi kesken osaamisen ja priorisoinnin takia.
+Tietokannan tuonti Google Cloud SQL palvelimelle onnistui, mutta itse sovelluksen tuonti ei.
+
+Puuttuvia komponentteja sovelluksesta olivat responsiivisuus (osittain), V9 sekä V10 visualisoinnit, käyttäjän kirjautuminen, luominen ja poistaminen 
+sekä henkilökohtaiset visualisointinäkymät.
+Visualisoinneille rajapinnat toteutettiin, mutta ne eivät lähteneet toimimaan syystä tai toisesta Chart.JS:n kanssa.
+Käyttäjän kirjautumisen ja luomisen rajapinnat toteutettiin myös, mutta toiminnallisuutta ei onnistuttu tekemään.
+Testausta ei varsinaisesti implementoitu erilliseen koodibranchiin githubissa, vaan toteutettiin manuaalisesti testaamalla koodin toimintaa.
+
+# SQL tiedosto tietokannalle löytyy ./server/test.sql
+
+# Linkki github-organisaatioon : https://github.com/ProjektiR23
+# Linkki projektin repositoriolle : https://github.com/ProjektiR23/CCA
+# Linkki projektin esittelyvideoon : https://www.youtube.com/watch?v=batw95x5uB0
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

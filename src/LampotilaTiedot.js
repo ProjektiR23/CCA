@@ -397,6 +397,7 @@ export default function LampotilaTiedot() {
 
   const options1 = {
     responsive: true,
+    
     plugins: {
       legend: {
         position: "top",
@@ -406,6 +407,7 @@ export default function LampotilaTiedot() {
         text: "Lämpötilapoikkeuksia tammikuusta 1850 eteenpäin",
       },
     },
+    
     scales: {
       x: {
         type: "time",
@@ -420,6 +422,7 @@ export default function LampotilaTiedot() {
   };
   const options2 = {
     responsive: true,
+    
     plugins: {
       legend: {
         position: "top",
@@ -443,6 +446,7 @@ export default function LampotilaTiedot() {
   };
   const options3 = {
     responsive: true,
+    
     plugins: {
       legend: {
         position: "top",
@@ -467,6 +471,7 @@ export default function LampotilaTiedot() {
   };
   const options4 = {
     responsive: true,
+   
     plugins: {
       legend: {
         position: "top",
@@ -491,6 +496,7 @@ export default function LampotilaTiedot() {
   };
   const options5 = {
     responsive: true,
+    
     plugins: {
       legend: {
         position: "top",
@@ -527,7 +533,7 @@ export default function LampotilaTiedot() {
 
     return (
 
-             <div style={{ width: "1200px" }}>
+             <div class="tila" >
             <h3>(1) Lämpötilatiedot</h3>
             <div>
             <Line options={options1} data={data1}/>
@@ -598,8 +604,9 @@ export default function LampotilaTiedot() {
             <a href="https://www.ncei.noaa.gov/access/paleo-search/study/17975"> Linkki etelämantereen jääkairauksen mittauksien kuvauksiin</a>
             </div>
             <hr/>
-            <h3>Hiilidioksidipitoisuuden ja lämpötilan muutoksia</h3>
+            
             <div class="tila">
+              <h3>Hiilidioksidipitoisuuden ja lämpötilan muutoksia</h3>
             <Line options={options5} data={data5}/>
             <hr/>
             Tässä kuvaajassa piirretään lämpötilan muutokset n. 2 miljoonan vuoden ajalta ja hiilidioksidipitoisuuden muutoksia n. 800 tuhannen vuoden ajalta
@@ -607,13 +614,15 @@ export default function LampotilaTiedot() {
             <b>(3.3)</b>
             <a href="http://carolynsnyder.com/publications.php"> Linkki lämpötilan ja hiilidioksidipitoisuuksien muutoksien dataan</a>
             </div>
+            
             <b>(3.3)</b>
             <a href="https://climate.fas.harvard.edu/files/climate/files/snyder_2016.pdf"> Linkki lämpötilan ja hiilidioksidipitoisuuksien muutoksien datan/tutkimuksen kuvaukseen</a>
             <hr/>
             </div>
+            
             <div>
               
-               <p class="i"><b>(1.1)</b> Morice, C.P., J.J. Kennedy, N.A. Rayner, J.P. Winn, E. Hogan, R.E. Killick, R.J.H. Dunn, T.J. Osborn, P.D. Jones and I.R. Simpson (in press) An updated assessment of near-surface temperature change from 1850: the HadCRUT5 dataset. Journal of Geophysical Research (Atmospheres) doi:10.1029/2019JD032361</p> Test
+               <p class="i"><b>(1.1)</b> Morice, C.P., J.J. Kennedy, N.A. Rayner, J.P. Winn, E. Hogan, R.E. Killick, R.J.H. Dunn, T.J. Osborn, P.D. Jones and I.R. Simpson (in press) An updated assessment of near-surface temperature change from 1850: the HadCRUT5 dataset. Journal of Geophysical Research (Atmospheres) doi:10.1029/2019JD032361</p> 
               
             </div>
             <div>

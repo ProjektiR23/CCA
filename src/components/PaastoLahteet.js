@@ -2901,7 +2901,7 @@ const URL = 'http://localhost:3001/'
 
 
     return (
-      <div style={{ width: "1300px" }}>
+      <div style={{ maxwidth: "1300px", maxHeight:"1200px" }}>
       <div>
             <h3>(4) Maiden CO2 päästöjä vuosilta 1959-2021</h3>
             
